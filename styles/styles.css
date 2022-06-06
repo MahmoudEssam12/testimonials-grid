@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #ecf2f8;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.cards-wrapper {
+  max-width: 90%;
+  margin: 2rem auto;
+  display: -ms-grid;
+  display: grid;
+  gap: 2rem;
+}
+
+.card {
+  padding: 1.7rem;
+  border-radius: 15px;
+  font-size: 13px;
+  -webkit-box-shadow: 0 0 12px 1px #ccc;
+          box-shadow: 0 0 12px 1px #ccc;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.card .user-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1rem;
+}
+
+.card .user-info .username {
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.card .user-info .job-title {
+  color: white;
+  opacity: 50%;
+}
+
+.card h3 {
+  color: white;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  color: #cfcfcf;
+  line-height: 18px;
+  font-size: 14px;
+}
+
+.card--bg1 {
+  background-color: #7541c8;
+  background-image: url("../images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position: 80% 0;
+}
+
+.card--bg2 {
+  background-color: #48556a;
+}
+
+.card--bg3 {
+  background-color: white;
+}
+
+.card--bg3 .user-info .username {
+  color: #19212e;
+}
+
+.card--bg3 .user-info .job-title {
+  color: #48556a;
+}
+
+.card--bg3 h3 {
+  color: #19212e;
+}
+
+.card--bg3 p {
+  color: #48556a;
+}
+
+.card--bg4 {
+  background-color: #19212e;
+}
+
+@media (min-width: 800px) {
+  .cards-wrapper {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
+  .card .user-info,
+  .card h3 {
+    margin-bottom: 0rem;
+  }
+  .card.card--column-span {
+    -ms-grid-column: span 2;
+        grid-column-start: span 2;
+  }
+  .card.card.card-row-span {
+    -ms-grid-column: 4;
+        grid-column-start: 4;
+    -ms-grid-row: 1;
+        grid-row-start: 1;
+    grid-row-end: 3;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

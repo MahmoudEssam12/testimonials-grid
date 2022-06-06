@@ -1,0 +1,146 @@
+//Layout
+$Mobile: 375px;
+$Desktop: 1440px;
+
+//Primary
+$Moderateviolet: hsl(263, 55%, 52%);
+$Verydarkgrayishblue: hsl(217, 19%, 35%);
+$Verydarkblackishblue: hsl(219, 29%, 14%);
+$White: hsl(0, 0%, 100%);
+
+//Neutral
+
+$Lightgray: hsl(0, 0%, 81%);
+$Lightgrayishblue: hsl(210, 46%, 95%);
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $Lightgrayishblue;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.cards-wrapper {
+    max-width: 90%;
+    margin: 2rem auto;
+    display: grid;
+    gap: 2rem;
+}
+
+.card {
+    padding: 1.7rem;
+    border-radius: 15px;
+    font-size: 13px;
+    box-shadow: 0 0 12px 1px #ccc;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .user-info {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        margin-bottom: 1rem;
+
+        .username {
+            color: $White;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .job-title {
+            color: $White;
+            opacity: 50%;
+        }
+    }
+
+    h3 {
+        color: $White;
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+
+    }
+
+    p {
+        color: $Lightgray;
+        line-height: 18px;
+        font-size: 14px;
+    }
+
+    &--bg1 {
+        background-color: $Moderateviolet;
+        background-image: url("../images/bg-pattern-quotation.svg");
+        background-repeat: no-repeat;
+        background-position: 80% 0;
+
+    }
+
+    &--bg2 {
+        background-color: $Verydarkgrayishblue;
+    }
+
+    &--bg3 {
+        background-color: $White;
+
+        .user-info {
+            .username {
+                color: $Verydarkblackishblue;
+            }
+
+            .job-title {
+                color: $Verydarkgrayishblue;
+            }
+        }
+
+        h3 {
+            color: $Verydarkblackishblue;
+        }
+
+        p {
+            color: $Verydarkgrayishblue;
+
+        }
+    }
+
+    &--bg4 {
+        background-color: $Verydarkblackishblue;
+    }
+
+}
+
+@media(min-width: 800px) {
+    .cards-wrapper {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card {
+
+        .user-info,
+        h3 {
+            margin-bottom: 0rem;
+        }
+
+        &.card--column-span {
+            grid-column-start: span 2;
+        }
+
+        &.card.card-row-span {
+            grid-column-start: 4;
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
+    }
+
+}
